@@ -1,6 +1,4 @@
 //Personal Message: Store a person’s name in a variable, and print a message to that person. 
-
-
 //Your message should be simple, such as, “Hello Eric, would you like to learn some Python today?”
 console.log("Question no 2");
 
@@ -16,18 +14,6 @@ console.log();
 console.log("Question no 3");
 //Name Cases: Store a person’s name in a variable, and then print that person’s 
 //name in lowercase, uppercase, and titlecase.\
-
-// function toTitleCase(str: string) {
-//     return str.toLowerCase().replace(/(?:^|\s)\w/g, match => match.toUpperCase());
-// }
-
-// let personName = "Munazza Zahid";
-// console.log(personName.toLowerCase());
-// console.log(personName.toUpperCase());
-
-// let titleCaseName = toTitleCase(personName);
-
-// console.log(titleCaseName); // Output: "John Doe"
 
 let personName = "Munazza Zahid";
 
@@ -1054,8 +1040,7 @@ console.log("Question no 41");
 // show_magicians(), which prints the name of each magician in the array.
 
 
-// string[] is used to indicate the expected data type of elements within an array, 
-// providing type safety and clarity in your code.
+
 function show_magicians(magicians:string[]) {
     for (let name of magicians){
    console.log(name);
