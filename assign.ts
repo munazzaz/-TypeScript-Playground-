@@ -1,4 +1,6 @@
 //Personal Message: Store a person’s name in a variable, and print a message to that person. 
+
+
 //Your message should be simple, such as, “Hello Eric, would you like to learn some Python today?”
 console.log("Question no 2");
 
@@ -15,17 +17,19 @@ console.log("Question no 3");
 //Name Cases: Store a person’s name in a variable, and then print that person’s 
 //name in lowercase, uppercase, and titlecase.\
 
-let personName = "Munazza Zahid";
 
-console.log("lowercase:");
-console.log(personName.toLowerCase());
 
-console.log("\nuppercase:");
-console.log(personName.toUpperCase());
+function toTitleCase(str: string) {
+    return str.toLowerCase().replace(/(?:^|\s)\w/g, match => match.toUpperCase());
+}
+let _personName = "MuNazza zahid!";
+console.log(_personName.toLowerCase());
+console.log(_personName.toUpperCase());
 
-let titleCaseString = personName.replace(/(?:^|\s)\w/g, match => match.toUpperCase());
-console.log("\ntitlecase:");
-console.log(titleCaseString);
+let titleCaseName = toTitleCase(_personName);
+
+console.log(titleCaseName); 
+
 
 console.log();
 //Name = "Munazza Zahid"
@@ -98,7 +102,7 @@ console.log("Question no 9");
 //  Then, using that variable, create a message that reveals your favorite number. Print that message.
 
 let favourateNumber = 20;
-console.log(`My favourate number is ${favourateNumber}`);
+console.log(`My favourate number is ${favourateNumber}.`);
 
 
 console.log();
@@ -147,7 +151,7 @@ const myfavouratemodeoftransports:string [] =["Honda", "Harley-Davidson", "BMW",
 
 
 for (let name of myfavouratemodeoftransports){
-console.log(`I would, like to own a ${name}`);
+console.log(`I would, like to own a ${name}.`);
 
 }
 console.log();
@@ -178,7 +182,7 @@ console.log("Question no 15");
 // • Print a second set of invitation messages, one for each person who is still in your list.
 
 // Array of people to invite to dinner
-const guestList: string[] = ["Mr.Zahid","Darick","Kathriene"];
+let guestList: string[] = ["Zahid","Albert Einstein","Kathriene"];
 
 // Print invitation messages for each person
 for (const guest of guestList) {
@@ -186,10 +190,10 @@ for (const guest of guestList) {
 }
 
 // Guest who can't make it
-const _unableToAttend: string = guestList[1];
+const _unableToAttend: string = guestList[2];
 
 // Update guest list and invite a new person
-guestList[1] = "Albert Einstein";
+guestList[2] = "Sofia Karsan";
 
 // Print a message about the guest who can't make it
 console.log(`${_unableToAttend} can't make it to the dinner.`);
@@ -210,29 +214,14 @@ console.log("Question no 16");
 
 // • Add one new guest to the middle of your array. • Use append() to add one new guest to the end of your list. • Print 
 // a new set of invitation messages, one for each person in your list.
-let guestcoming:string[] =[ "Mr.Zahid","Darick","Kathriene"];
-
-for (let guest of guestcoming){
-    console.log(`Dear ${guest}, you are invited to join us for a special dinner. We would be honored to have you there`);
-    
-}
-
-let _unabletocome = guestcoming[0];
-guestcoming[0] = "Fionna";
-
-console.log(`${_unabletocome} can't make it to the dinner`);
-
-for (let name of guestcoming){
-    console.log(`Dear ${name}, you are invited to join us for a special dinner. We would be honored to have you there`)
-}
 
 console.log("Good news! we found a bigger dinner table");
 
-guestcoming.unshift("Leslie");
-guestcoming.splice(2,0,"Diana");
-guestcoming.push("Elsa");
+guestList.unshift("Leslie");
+guestList.splice(2,0,"Diana");
+guestList.push("Elsa");
 
-for (let guest of guestcoming){
+for (let guest of guestList){
 console.log(`Dear ${guest}, you are invited to join us for a special dinner. We would be honored to have you there`);
 
 }
@@ -254,40 +243,26 @@ console.log("Question no 17");
 
 
 // Starting with the program from Exercise 16
-for (let name of guestcoming){
-    console.log(`Dear ${name}, you are invited to join us for a special dinner. We would be honored to have you there`)
-}
-
-console.log("Good news! we found a bigger dinner table");
-
-guestcoming.unshift("Leslie");
-guestcoming.splice(2,0,"Diana");
-guestcoming.push("Elsa");
-
-for (let guest of guestcoming){
-console.log(`Dear ${guest}, you are invited to join us for a special dinner. We would be honored to have you there`);
-
-}
 
 // Inform about the smaller dinner table
 console.log("Oops! The new dinner table won't arrive in time, and we can only invite two people for dinner.");
 
 // Remove guests from the list one at a time until only two names remain
-while (guestcoming.length > 2) {
-    const removedGuest = guestcoming.pop();
+while (guestList.length > 2) {
+    const removedGuest = guestList.pop();
     console.log(`${removedGuest}, we're sorry, but we can't invite you to dinner.`);
 }
 
 // Print a message to the two people still on your list
-for (const guest of guestcoming) {
+for (const guest of guestList) {
     console.log(`Dear ${guest}, you're still invited to join us for a special dinner. We would be honored to have you there.`);
 }
 
 // Remove the last two names from your list, so you have an empty list
-guestcoming = [];
+guestList = [];
 
 // Print your list to make sure you actually have an empty list at the end of your program
-console.log(guestcoming); // Output: []
+console.log(guestList); // Output: []
 
 
 console.log();
@@ -465,45 +440,45 @@ console.log("Question no 23")
 // • Create at least 10 tests. Have at least 5 tests evaluate to True and another 5 tests evaluate to False.
   
 let temperature = 25;
-console.log("Is temperature is greater than 20? I predict True.");
+console.log("Is temperature is greater than 20? I predict true.");
 console.log(temperature > 20);
 
 let _age = 15;
-console.log("Is age is less then 16 ? I predict true");
+console.log("Is age is less then 16 ? I predict true.");
 console.log(_age < 16);
 
 let isPouring = true;
-console.log("Is it poouring outside? I predict true");
+console.log("Is it poouring outside? I predict true.");
 console.log(isPouring);
 
 let candidatename = "Ellaf";
-console.log("Is candidate name is equal to Ellaf and Is candidate data type is same and equal to ellaf ? I predict true");
+console.log("Is candidate name is equal to Ellaf and Is candidate data type is same and equal to ellaf ? I predict true.");
 console.log(candidatename == "Ellaf" && candidatename === "Ellaf");
 
 
 let foodispreparedbyMom= true;
-console.log("Is food is prepared by Mom? I predict true");
+console.log("Is food is prepared by Mom? I predict true.");
 console.log(foodispreparedbyMom);
 
 let fruit = "Avocado";
-console.log("Is fruit variable data type is string and equal to Rasberry? I predict false");
+console.log("Is fruit variable data type is string and equal to Rasberry? I predict false.");
 console.log(fruit === "Rasberry");
 
 let city = 'New York';
-console.log("Is city equal to 'New York'? I predict False.");
+console.log("Is city equal to 'New York'? I predict false.");
 console.log(city === 'New York');
 
 
 let isWeekend = false;
-console.log("Is it the weekend? I predict False.");
+console.log("Is it the weekend? I predict false.");
 console.log(isWeekend);
 
 let grade = 'B';
-console.log("Is grade equal to 'A'? I predict False.");
+console.log("Is grade equal to 'A'? I predict false.");
 console.log(grade === 'A');
 
 let personAge = 22;
-console.log("Is in frozen 2 Anna age's is less then 20? I predicted false");
+console.log("Is in frozen 2 Anna age's is less then 20? I predicted false.");
 console.log(personAge < 20);
 
 console.log();
@@ -525,26 +500,26 @@ console.log("Question no 24");
 
 // • Tests for equality and inequality with strings
 let colour = "Maroon";
-console.log("Is colour equal to Maroon? I predict true");
+console.log("Is colour equal to Maroon? I predict true.");
 console.log(colour == "Maroon");
 
-console.log("Is colour not equal to Maroon? I predict true");
+console.log("Is colour not equal to Maroon? I predict true.");
 console.log(colour != "Blue");
 
 let car = "Lamborghini";
-console.log("Is car equal to lamborghini? I predict false");
+console.log("Is car equal to lamborghini? I predict false.");
 console.log(car == "lamborghini");
 
-console.log("Is car not equal to Lamborghini? I predict false");
+console.log("Is car not equal to Lamborghini? I predict false.");
 console.log(car != "Lamborghini");
 
 // • Tests using the lower case function
 let fruit2="pineapple";
-console.log("Is pineapple lowecase? I predict true");
+console.log("Is pineapple lowecase? I predict true.");
 console.log(fruit2 === fruit2.toLowerCase());
 
 let text="Hello World";
-console.log("Is Hello World lowecase? I predict false");
+console.log("Is Hello World lowecase? I predict false.");
 console.log(text === text.toLowerCase());
 
 // • Numerical tests involving equality and inequality, greater than and less than, 
@@ -556,40 +531,40 @@ let number2 = 5;
 let number3 = 20;
 let number4 = 19
 
-console.log("Is 10 is equal to 5? I predict false");
+console.log("Is 10 is equal to 5? I predict false.");
 console.log(number1 == number2);
 
-console.log("Is 10 not equal to 5 ? I predict true");
+console.log("Is 10 not equal to 5 ? I predict true.");
 console.log(number1 != number2);
 
-console.log("Is 20 is equal to 19? I predict false");
+console.log("Is 20 is equal to 19? I predict false.");
 console.log(number3 == number4);
 
-console.log("Is 20 not equal to 19 ? I predict true");
+console.log("Is 20 not equal to 19 ? I predict true.");
 console.log(number3 != number4);
 
-console.log("Is 10 is greater then 5? I predict true");
+console.log("Is 10 is greater then 5? I predict true.");
 console.log(number1 > number2);
 
-console.log("Is 10 is less then 5? I predict false");
+console.log("Is 10 is less then 5? I predict false.");
 console.log(number1 < number2);
 
-console.log("Is 20 is greater then 19? I predict true");
+console.log("Is 20 is greater then 19? I predict true.");
 console.log(number3 > number4);
 
-console.log("Is 20 is less then 19? I predict false");
+console.log("Is 20 is less then 19? I predict false.");
 console.log(number3 < number4);
 
-console.log("Is 10 is greater then equal to 5? I predict true");
+console.log("Is 10 is greater then equal to 5? I predict true.");
 console.log(number1 >= number2);
 
-console.log("Is 10 is less then equal to 5? I predict false");
+console.log("Is 10 is less then equal to 5? I predict false.");
 console.log(number1 <= number2);
 
-console.log("Is 20 is greater then equal to 19? I predict true");
+console.log("Is 20 is greater then equal to 19? I predict true.");
 console.log(number3 >= number4);
 
-console.log("Is 20 is less then equal to 19? I predict false");
+console.log("Is 20 is less then equal to 19? I predict false.");
 console.log(number3 <= number4);
 
 // .Tests using "and" and "or" operators
@@ -600,21 +575,21 @@ let iswarm = false;
 let isMale = true;
 let isFemale = false;
 
-console.log("Is it cold and warm? I predict false");
+console.log("Is it cold and warm? I predict false.");
 console.log(iscold && iswarm);
 
-console.log("Is it cold or warm? I predict true");
+console.log("Is it cold or warm? I predict true.");
 console.log(iscold || iswarm);
 
-console.log("Is Male and Female? I predict false");
+console.log("Is Male and Female? I predict false.");
 console.log(isMale && isFemale);
 
-console.log("Is Male or Female? I predict true");
+console.log("Is Male or Female? I predict true.");
 console.log(isMale || isFemale);
 
 // Test whether an item is in an array
 let fruits = ['apple', 'banana', 'orange'];
-console.log("Is 'pear' in the fruits array? I predict False.");
+console.log("Is 'pear' in the fruits array? I predict false.");
 console.log(fruits.includes('pear'));
 
 console.log("Is 'apple' in the fruits array? I predict true.");
@@ -917,7 +892,7 @@ console.log("Question no 34");
 let favouratePizza:string[] = ["Pepperoni","Margherita","Italian","Barbecue"]
 ;
 for (let name of favouratePizza){
-    console.log(`I like ${name} pizza`);
+    console.log(`I like ${name} pizza.`);
     
 }
 console.log("Pizza is my favourate food.No matter wherever I go I always eat Pizza");
@@ -1040,7 +1015,8 @@ console.log("Question no 41");
 // show_magicians(), which prints the name of each magician in the array.
 
 
-
+// string[] is used to indicate the expected data type of elements within an array, 
+// providing type safety and clarity in your code.
 function show_magicians(magicians:string[]) {
     for (let name of magicians){
    console.log(name);
@@ -1172,5 +1148,3 @@ let car3= cars("Lamborghini","Gallardo",undefined,"Powerfull Engine")
 console.log(car1);
 console.log(car2);
 console.log(car3);
-
-
